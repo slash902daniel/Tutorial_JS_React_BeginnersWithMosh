@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {  
+    //value: this.props.counter.value,
     value: 0,
     tags: ["tag1", "tag2", "tag3"]
   }
@@ -27,22 +28,22 @@ class Counter extends Component {
   }
 
   handleIncrement_V_Experimental = product => {
-    console.log("Increment Clicked:product:  ", product);
-    console.log("Increment Clicked this: ", this);
-    console.log("Increment Clicked2 props: ", this.props);
-    console.log("Increment Clicked2 props.value: ", this.props.value);
+    // console.log("Increment Clicked:product:  ", product);
+    // console.log("Increment Clicked this: ", this);
+    // console.log("Increment Clicked2 props: ", this.props);
+    // console.log("Increment Clicked2 props.value: ", this.props.value);
     this.setState({value: this.state.value + 1});
   }
 
   render() {
-    console.log("render props: ", this.props);
+    //console.log("render props: ", this.props);
     return (
       <React.Fragment>
         <div>
           { this.props.children }
           <span className={this.getBadgeClasses()}>{this.formatValue()}</span>
           <button onClick={ () => this.handleIncrement_V_Experimental({ id: 1 }) } className="btn btn-secondary btn-sm">Increment</button>
-          <button onClick={ this.props.onDelete } className="btn btn-danger btn-sm m-2">Delete</button>
+          <button onClick={ () => this.props.onDelete(this.props.counter.id) } className="btn btn-danger btn-sm m-2">Delete</button>
           
           {this.state.tags===0 && 'Please create a new tag!'}
           {this.renderTags()}  
