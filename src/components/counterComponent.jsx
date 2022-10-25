@@ -6,6 +6,11 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   }
 
+  constructor(){
+    super();
+    this.handleIncrement = this.handleIncrement.bind(this);
+  }
+
   badgeStyles = {
     fontSize: 10,
     fontWeight: "bold"
@@ -19,7 +24,12 @@ class Counter extends Component {
 
   handleIncrement(){
     console.log("Increment Clicked");
+    //...more logic
+  }
 
+  handleIncrement_V_Experimental = () => {
+    console.log("Increment Clicked", this);
+    //...more logic
   }
 
   render() {
