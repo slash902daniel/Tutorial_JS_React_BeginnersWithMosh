@@ -2,11 +2,6 @@ import React, { Component } from "react";
 
 class Counter extends Component {
 
-  // constructor(){
-  //   super();
-  //   this.handleIncrement = this.handleIncrement.bind(this);
-  // }
-
   badgeStyles = {
     fontSize: 10,
     fontWeight: "bold"
