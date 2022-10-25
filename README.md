@@ -1,6 +1,21 @@
 # BASED ON VIDEO TUTORIAL
 https://www.youtube.com/watch?v=Ke90Tje7VS0
 
+# HOW TO DEBUG
+Install the extension, open devtools => components
+
+You can see the tree and properties,
+also can seran in console if you type
+
+$r
+
+or
+
+$r.render()
+
+etc
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
