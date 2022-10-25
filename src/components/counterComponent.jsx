@@ -26,9 +26,10 @@ class Counter extends Component {
     this.setState({count: this.state.count + 1});
   }
 
-  handleIncrement_V_Experimental = () => {
-    console.log("Increment Clicked: ", this);
-    console.log("Increment Clicked2: ", this.props);
+  handleIncrement_V_Experimental = product => {
+    console.log("Increment Clicked:product:  ", product);
+    console.log("Increment Clicked this: ", this);
+    console.log("Increment Clicked2 props: ", this.props);
     this.setState({count: this.state.count + 1});
   }
 
@@ -38,7 +39,7 @@ class Counter extends Component {
       <React.Fragment>
         <div>
           <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-          <button onClick={this.handleIncrement_V_Experimental} className="btn btn-secondary btn-sm">Increment</button>
+          <button onClick={ () => this.handleIncrement_V_Experimental({ id: 1 }) } className="btn btn-secondary btn-sm">Increment</button>
           {this.state.tags===0 && 'Please create a new tag!'}
           {this.renderTags()}  
         </div>
