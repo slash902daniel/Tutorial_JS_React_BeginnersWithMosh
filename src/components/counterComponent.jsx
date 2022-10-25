@@ -19,7 +19,7 @@ class Counter extends Component {
   renderTags(){
     if (this.state.tags.length === 0) return <p>There are no tags!</p>;
     
-    return <ul> {this.state.tags.map(tag => <li>{tag}</li>)} </ul>;
+    return <ul> {this.state.tags.map(tag => <li key={tag}>{tag}</li>)} </ul>;
   }
 
   handleIncrement(){
@@ -27,8 +27,9 @@ class Counter extends Component {
   }
 
   handleIncrement_V_Experimental = () => {
-    console.log("Increment Clicked", this);
-    //...more logic
+    console.log("Increment Clicked: ", this);
+    console.log("Increment Clicked2: ", this.props);
+    this.setState({count: this.state.count + 1});
   }
 
   render() {
@@ -37,7 +38,7 @@ class Counter extends Component {
       <React.Fragment>
         <div>
           <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-          <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+          <button onClick={this.handleIncrement_V_Experimental} className="btn btn-secondary btn-sm">Increment</button>
           {this.state.tags===0 && 'Please create a new tag!'}
           {this.renderTags()}  
         </div>
