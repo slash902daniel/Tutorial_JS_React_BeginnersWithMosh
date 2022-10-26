@@ -2,6 +2,18 @@ import React, { Component } from "react";
 
 class Counter extends Component {
 
+  componentDidUpdate(previousProps, previousState){
+    console.log('LifeCycle Hooks (counter) - Update - componentDidUpdate');
+    console.log('previousProps: ', previousProps);
+    console.log('previousState: ', previousState);
+
+    if (previousProps.counter.value !== this.props.counter.value) {
+      //Ajax call to get new data from svr  `
+      console.log('Dummy ajax call here!');
+    }
+
+  }
+
   badgeStyles = {
     fontSize: 10,
     fontWeight: "bold"
