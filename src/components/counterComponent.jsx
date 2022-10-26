@@ -19,6 +19,13 @@ class Counter extends Component {
     fontWeight: "bold"
   }
 
+  componentWillUnmount(){
+    console.log('LifeCycle Hooks (counter) - Unmount - componentWillUnmount');
+
+    //Call to clean stuff after unmount(delete)  `
+    console.log('Dummy Call to clean stuff after unmount(delete)!');
+  }
+
   render() {
     console.log('Counter - Render');
     return (
