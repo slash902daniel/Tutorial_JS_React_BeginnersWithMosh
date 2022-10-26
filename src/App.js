@@ -4,6 +4,19 @@ import './App.css';
 import NavBar from './components/navbar';
 import Counters from './components/counters';
 class App extends Component {
+  constructor(){
+    super();
+    console.log('LifeCycle Hooks (Main App) - Mount - constructor');
+    //this.state = this.props.something;
+    //If you want to use props here.. need to add props as constructor arg and also in the super call (super(props))
+
+  }
+
+  componentDidMount(){
+    console.log('LifeCycle Hooks (Main App) - Mount - componentDidMount');
+    //Ajax call
+    //this.setState({})
+  }
 
   state = {
     counters: [
@@ -40,6 +53,8 @@ class App extends Component {
   };
 
   render() {
+    console.log('LifeCycle Hooks (Main App) - Mount - Render');
+
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>

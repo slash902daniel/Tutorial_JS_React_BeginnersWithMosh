@@ -8,7 +8,7 @@ class Counter extends Component {
   }
 
   render() {
-    //console.log("render props: ", this.props);
+    console.log('Counter - Render');
     return (
       <React.Fragment>
         <div>

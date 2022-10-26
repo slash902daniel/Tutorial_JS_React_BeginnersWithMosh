@@ -8,6 +8,8 @@ import React, {Component} from "react";
 //Further we can remove the props. by destructuring the call to extract the variable used ({totalCounters})
 
 const NavBar = ({totalCounters}) => {
+    console.log('navBar - Render'); //Cannot use lifecicle hooks on statelss function components
+    
     return (
         <nav className="navbar bg-light">
             <div className="container-fluid">
